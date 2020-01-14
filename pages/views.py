@@ -6,5 +6,6 @@ def home_view(request, *args, **kwargs):
     return render(request, "home.html", {})
 
 
-def contact_view(*args, **kwargs):
-    return HttpResponse("<h1>Contact page</h1>")
+def contact_view(request, *args, **kwargs):
+    my_context = {"my_text": "George Milch", "my_telegram": "a_quazar"}
+    return render(request, "contact.html", my_context)
