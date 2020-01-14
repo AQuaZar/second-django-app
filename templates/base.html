@@ -14,14 +14,14 @@
       footer {
         position: absolute;
         bottom: 0;
-        background: #f0f0f0; /* Цвет фона */
-        padding: 7px; /* Поля вокруг текста */
-        border: solid 1px black; /* Параметры рамки */
+        background: #f0f0f0;
+        padding: 7px;
+        border: solid 1px black;
       }
     </style>
   </head>
   <body>
-    {% block content %} replace me {% endblock %}
+    {% include 'navbar.html' %} {% block content %} replace me {% endblock %}
     <footer>{% block footer %} replace me {% endblock %}</footer>
   </body>
 </html>
