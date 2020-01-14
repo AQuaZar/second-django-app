@@ -6,7 +6,13 @@
 <ul>
 
   {% for dish in my_favorite_food %} 
-  <li>{{ forloop.counter }}  - {{ dish }}</li>
+    {% if dish == 'pasta' or dish == 'pizza' %}
+    <li>{{ forloop.counter }}  - {{ dish|add:" (italian)" }}</li>
+    {% elif dish == 'ramen' %}
+    <li>{{ forloop.counter }}  - {{ dish|add:" (japanese)" }}</li>
+    {% else %}
+    <li>{{ forloop.counter }}  - {{ dish }} </li>
+    {% endif %}
   {% endfor %}
   
 </ul>
