@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<p>
+  Kono {{ my_text}}, niwa yume ga aru, you can find me at @{{ my_telegram}} and that what I like to eat:
+</p>
+
+<ul>
+
+  {% for dish in my_favorite_food %} 
+  <li>{{ forloop.counter }}  - {{ dish }}</li>
+  {% endfor %}
+  
+</ul>
+
+{% endblock %} {% block footer %}
+  <h1>It's over Anakin I have a low-ground</h1>
+  {% endblock %}
+</ul>

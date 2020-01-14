@@ -6,6 +6,10 @@ def home_view(request, *args, **kwargs):
     return render(request, "home.html", {})
 
 
-def contact_view(request, *args, **kwargs):
-    my_context = {"my_text": "George Milch", "my_telegram": "a_quazar"}
-    return render(request, "contact.html", my_context)
+def about_view(request, *args, **kwargs):
+    my_context = {
+        "my_text": "George Milch",
+        "my_telegram": "a_quazar",
+        "my_favorite_food": ["pasta", "pizza", "ramen"],
+    }
+    return render(request, "about.html", my_context)
