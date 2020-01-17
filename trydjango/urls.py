@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from pages.views import home_view, about_view
-from products.views import product_detail_view, product_create_view
+from products.views import product_detail_view, product_create_view, render_initial_data
 
 urlpatterns = [
+    url("create/init/", render_initial_data),
     url("create/", product_create_view, name="create product"),
     url("product/", product_detail_view, name="product detail"),
     url("about/", about_view, name="about"),
