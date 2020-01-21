@@ -29,10 +29,10 @@ from products.views import (
 urlpatterns = [
     url("admin/", admin.site.urls),
     url("create/init/", render_initial_data),
-    url("create/", product_create_view, name="create product"),
-    path("product/<int:my_id>/", dynamic_lookup_view),
+    url("create/", product_create_view, name="create-product"),
+    path("product/<int:my_id>/", dynamic_lookup_view, name="product-detail"),
     path("product/<int:my_id>/delete/", product_delete_view),
-    url("product/", product_list_view, name="products list"),
+    url("product/", product_list_view, name="products-list"),
     url("about/", about_view, name="about"),
     url("", home_view, name="home"),
 ]
