@@ -20,19 +20,19 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = ["title", "description", "price"]
 
-    def clean_title(self, *args, **kwargs):
-        title = self.cleaned_data.get("title")
-        if not "CFE" in title:
-            raise forms.ValidationError("This is not valid title")
-        else:
-            return title
+    # def clean_title(self, *args, **kwargs):
+    #     title = self.cleaned_data.get("title")
+    #     if not "CFE" in title:
+    #         raise forms.ValidationError("This is not valid title")
+    #     else:
+    #         return title
 
-    def clean_email(self, *args, **kwargs):
-        email = self.cleaned_data.get("email")
-        if not "@" in email:
-            raise forms.ValidationError("This is not valid email")
-        else:
-            return email
+    # def clean_email(self, *args, **kwargs):
+    #     email = self.cleaned_data.get("email")
+    #     if not "@" in email:
+    #         raise forms.ValidationError("This is not valid email")
+    #     else:
+    #         return email
 
 
 class RawProductForm(forms.Form):
