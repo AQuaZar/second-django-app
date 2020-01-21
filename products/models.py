@@ -8,5 +8,8 @@ class Product(models.Model):
     summary = models.TextField()
     featured = models.BooleanField(null=True)
 
+    def get_absolute_url(self):
+        return f"{self.id}/"
+
 
 # Create your models here.
