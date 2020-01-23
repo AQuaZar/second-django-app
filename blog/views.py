@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import (
     CreateView,
     ListView,
@@ -34,4 +34,9 @@ class ArticleUpdateView(UpdateView):
     #     return get_object_or_404(Article, id=id_)
 
 
-# Create your views here.
+class ArticleDeleteView(DeleteView):
+    queryset = Article.objects.all()
+    template_name = "blog/article_delete.html"
+    # success_url = "/blog/"
+    def get_success_url(self):
+        return reverse("articles:article-list")
